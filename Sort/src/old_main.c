@@ -4,8 +4,9 @@
 #include "get_opt.h"
 #include "array.h"
 #include "sort.h"
+#include "old_main.h"
 
-int main(int argc, char **argv) {
+int sort(int argc, char **argv) {
     int i, method, size, array_type, print_vector = 0;
 
     if(!check_opt(argc)){
