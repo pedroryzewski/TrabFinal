@@ -1,4 +1,5 @@
-CFLAGS = -g -Wall -Wfatal-errors -fprofile-arcs -ftest-coverage
+CFLAGS = -g -Wall -Wfatal-errors
+CCOV = -fprofile-arcs -ftest-coverage
 GCC = gcc
 UNITY_ROOT = Unity
 SORT_ROOT = Sort
@@ -25,8 +26,9 @@ APP_FILES = \
 INC_DIRS = -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src -I$(SORT_ROOT)/src
 
 all: clean app valgrind cov cppcheck sanitizer run_app
-
-app:
+test: clean valgrind cov cppcheck sanitizer
+app: clean
+	
 	$(GCC) $(CFLAGS) $(INC_DIRS) $(APP_FILES) -o app.o
 
 cov:
@@ -38,11 +40,11 @@ cppcheck:
 	cppcheck --error-exitcode=1 $(SORT_ROOT)/src/old_main.c
 
 valgrind:
-	$(GCC) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o unity.o
+	$(GCC) $(CFLAGS) $(CCOV) $(INC_DIRS) $(SRC_FILES) -o unity.o
 	valgrind --leak-check=full --show-leak-kinds=all --error-exitcode=1 ./unity.o
 
 sanitizer:
-	$(GCC) $(CFLAGS) -fsanitize=address $(INC_DIRS) $(SRC_FILES) -o unity.o
+	$(GCC) $(CFLAGS) $(CCOV) -fsanitize=address $(INC_DIRS) $(SRC_FILES) -o unity.o
 	./unity.o
 
 run:
