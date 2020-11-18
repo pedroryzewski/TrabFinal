@@ -6,7 +6,7 @@
 #include "sort.h"
 #include "old_main.h"
 
-int sort(int argc, char **argv, int *vet) {
+int sort(int argc, char **argv, int *vet, int test) {
     int i, method, size, array_type, print_vector = 0;
 
 /*  if(!check_opt(argc)){
@@ -34,7 +34,9 @@ int sort(int argc, char **argv, int *vet) {
             print_vector = 1;
     
     // Create the vector with the specified size and situation
-    // int *vet = generate_array(size, array_type);
+    
+    if (test)
+        vet = generate_array(size, array_type);
 
     if(!vet){
         fprintf(stderr,"Memory allocation failed.\n");
@@ -68,7 +70,8 @@ int sort(int argc, char **argv, int *vet) {
         }
         printf("\nTime elapsed: %f s\n", get_elapsed_time());
     }
-    //free(vet);
+    if(test)
+        free(vet);
     free(vet_aux);
     //printf("\n\n");
     return 0;
