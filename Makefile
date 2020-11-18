@@ -1,4 +1,4 @@
-CFLAGS = -g -Wall -Wfatal-errors -ftest-coverage
+CFLAGS = -g -Wall -Wfatal-errors -fprofile-arcs -ftest-coverage
 GCC = gcc
 UNITY_ROOT = Unity
 SORT_ROOT = Sort
@@ -32,7 +32,7 @@ cppcheck:
 
 valgrind:
 	$(GCC) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o app.o
-	valgrind --leak-check=full --error-exitcode=1 ./app.o
+	valgrind --leak-check=full --show-leak-kinds=all --error-exitcode=1 ./app.o
 
 sanitizer:
 	$(GCC) $(CFLAGS) -fsanitize=address $(INC_DIRS) $(SRC_FILES) -o app.o

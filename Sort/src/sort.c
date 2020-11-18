@@ -225,7 +225,7 @@ int* sort_array(int *array, int size, int method){
 
         case QUICK:
             start = clock();
-            quick_sort(array, 0, size);
+            quick_sort(array, 0, size-1);
             end = clock();
         break;
 
@@ -259,12 +259,4 @@ int* sort_array(int *array, int size, int method){
 
 double get_elapsed_time(){
     return elapsed_time;
-}
-
-int get_swaps(){
-    return numberOfSwaps;
-}
-
-int get_comparisons(){
-    return numberOfComparisons;
 }
