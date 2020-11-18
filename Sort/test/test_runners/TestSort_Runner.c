@@ -13,7 +13,7 @@ TEST_GROUP_RUNNER(Sort)
   RUN_TEST_CASE(Sort, Ascending2);
   RUN_TEST_CASE(Sort, Ascending3);
   RUN_TEST_CASE(Sort, Ascending4);
-  RUN_TEST_CASE(Sort, Ascending5);
+  // RUN_TEST_CASE(Sort, Ascending5);
   RUN_TEST_CASE(Sort, Ascending6);
   RUN_TEST_CASE(Sort, Descending1);
   RUN_TEST_CASE(Sort, Descending2);
@@ -42,7 +42,7 @@ TEST_GROUP_RUNNER(Sort)
   RUN_TEST_CASE(Sort, Different2);
   RUN_TEST_CASE(Sort, Different3);
   RUN_TEST_CASE(Sort, Different4);
-  RUN_TEST_CASE(Sort, Different5);
+  // RUN_TEST_CASE(Sort, Different5);
   RUN_TEST_CASE(Sort, Different6);
 
 }

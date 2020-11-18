@@ -151,7 +151,7 @@ TEST(Sort, Ascending4)
   int exp_vet[5] = {1,3,4,7,9};
   TEST_ASSERT_EQUAL_INT_ARRAY(exp_vet,vet,5);
  }
-TEST(Sort, Ascending5) //ERRO AQUII #TODO: erro heap
+TEST(Sort, Ascending5)
 { 
   int vet[5] = {1,3,4,7,9};
   sprintf(ptr[1],"-a");
@@ -161,7 +161,7 @@ TEST(Sort, Ascending5) //ERRO AQUII #TODO: erro heap
   sprintf(ptr[5],"-s");
   sprintf(ptr[6],"ascending");
   sort(tam,ptr,vet,0);
-  int exp_vet[5] = {1,3,4,9,7};
+  int exp_vet[5] = {1,3,4,7,9};
   TEST_ASSERT_EQUAL_INT_ARRAY(exp_vet,vet,5);
  }
 TEST(Sort, Ascending6) 
@@ -243,7 +243,7 @@ TEST(Sort, Descending5)
   int exp_vet[5] = {1,3,4,7,9};
   TEST_ASSERT_EQUAL_INT_ARRAY(exp_vet,vet,5);
  }
-TEST(Sort, Descending6) //10
+TEST(Sort, Descending6)
 { 
   int vet[10] = {13,10,9,7,5,4,4,3,3,1};
   sprintf(ptr[1],"-a");
@@ -593,8 +593,7 @@ TEST(Sort, Different4)
   int exp_vet[5] = {3,7,9,1,4};
   TEST_ASSERT_EQUAL_INT_ARRAY(exp_vet,vet,5);
 }
-TEST(Sort, Different5) // #TODO: erro heap
-{ 
+TEST(Sort, Different5) { 
   int vet[5] = {7,3,9,1,4};
   sprintf(ptr[1],"-a");
   sprintf(ptr[2],"heap");
@@ -603,7 +602,7 @@ TEST(Sort, Different5) // #TODO: erro heap
   sprintf(ptr[5],"-s");
   sprintf(ptr[6],"random");
   sort(tam,ptr,vet,0);
-  int exp_vet[5] = {3,9,7,1,4};
+  int exp_vet[5] = {3,7,9,1,4};
   TEST_ASSERT_EQUAL_INT_ARRAY(exp_vet,vet,5);
 }
 TEST(Sort, Different6) 
