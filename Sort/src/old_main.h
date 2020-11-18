@@ -1,1 +1,1 @@
-int sort(int argc, char **argv);
+int sort(int argc, char **argv, int *vet);

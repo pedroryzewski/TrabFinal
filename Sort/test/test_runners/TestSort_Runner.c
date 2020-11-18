@@ -31,4 +31,18 @@ TEST_GROUP_RUNNER(Sort)
   RUN_TEST_CASE(Sort, print);
   RUN_TEST_CASE(Sort, Nothing);
   RUN_TEST_CASE(Sort, Only1);
+  RUN_TEST_CASE(Sort, Negative);
+  RUN_TEST_CASE(Sort, Limits1);
+  RUN_TEST_CASE(Sort, Limits2);
+  RUN_TEST_CASE(Sort, Limits3);
+  RUN_TEST_CASE(Sort, Limits4);
+  RUN_TEST_CASE(Sort, Limits5);
+  RUN_TEST_CASE(Sort, Limits6);
+  RUN_TEST_CASE(Sort, Different1);
+  RUN_TEST_CASE(Sort, Different2);
+  RUN_TEST_CASE(Sort, Different3);
+  RUN_TEST_CASE(Sort, Different4);
+  RUN_TEST_CASE(Sort, Different5);
+  RUN_TEST_CASE(Sort, Different6);
+
 }
